@@ -128,7 +128,7 @@
         _ballVelocity.x += 0.3;
     }
 }
-#pragma mark 游戏失败界面(遮罩)
+#pragma mark 游戏失败界面
 - (void)FailView
 {
     //启用退出游戏和重新开始选项并且显示分数
@@ -138,10 +138,6 @@
     //显示最后得分
     int lastgrade = [_Grade.text intValue];
     _Message.text = [NSString stringWithFormat:@"很遗憾，最后你的得分为%d",lastgrade];
-    //将其添加到遮罩view上
-    [self.Coverview bringSubviewToFront:_Message];
-    [self.Coverview bringSubviewToFront:_Exit];
-    [self.Coverview bringSubviewToFront:_Restart];
 }
 #pragma mark 重新开始游戏
 - (IBAction)Restartgame:(UIButton *)sender {
