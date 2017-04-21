@@ -128,6 +128,17 @@
         _ballVelocity.x += 0.3;
     }
 }
+#pragma mark 拖动挡板方法
+- (IBAction)DragBaffle:(UIPanGestureRecognizer *)sender {
+    //判断手指是否有拖动
+    if (sender.state == UIGestureRecognizerStateChanged){
+    //来接收坐标
+    CGPoint point = [sender locationInView:sender.view];
+    //为了不使挡板上下移动，故y值不变
+    [_BaffleImageView setCenter:CGPointMake(point.x,_BaffleImageView.center.y)];
+}
+}
+
 #pragma mark 游戏失败界面
 - (void)FailView
 {
